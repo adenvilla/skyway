@@ -1,0 +1,20 @@
+# Editors
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
+
+# Local tooling
+node_modules/
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Local environment
+.env
+.env.*
+
+# Logs
+*.log

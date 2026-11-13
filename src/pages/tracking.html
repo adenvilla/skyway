@@ -1,0 +1,76 @@
+<section class="page-head">
+  <div class="page-head__media" aria-hidden="true"><img src="assets/img/containers.jpg" alt="" /></div>
+  <div class="wrap page-head__in">
+    <div>
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html" data-i18n="nav.home">Home</a><span>/</span><span data-i18n="nav.track">Tracking</span></nav>
+      <h1><span data-i18n="p.track.h1">Where your cargo is,<br /><em>right now.</em></span></h1>
+      <p class="lede" data-i18n="p.track.l">Send us the reference on your booking confirmation and our operations desk replies with the current position and next movement.</p>
+    </div>
+    <aside class="page-head__aside">
+      <div><b>Mon–Sat</b><small data-i18n="contact.hours">08:00 – 18:00 EAT</small></div>
+      <div><b>6</b><small data-i18n="track.milestones">milestones tracked</small></div>
+    </aside>
+  </div>
+</section>
+
+<section class="section section--paper2">
+  <div class="wrap">
+    <form class="track-form" id="trackForm" novalidate>
+      <div class="field">
+        <label for="trackRef" data-i18n="track.label">Booking or container reference</label>
+        <input id="trackRef" type="text" placeholder="SKY-0000-000" autocomplete="off" required />
+      </div>
+      <div class="field">
+        <label for="trackContact" data-i18n="track.contact">Phone or email for the reply</label>
+        <input id="trackContact" type="text" autocomplete="tel" required />
+      </div>
+      <button class="btn btn--ink" type="submit"><span data-i18n="track.btn">Request status</span><svg viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6"/></svg></button>
+    </form>
+    <p class="form-msg" id="trackMsg" role="status" aria-live="polite"></p>
+    <p class="micro track-hint" data-i18n="track.hint">We reply within one working day. For cargo already at the port, call the office — it is faster.</p>
+
+    <div class="track-switch">
+      <a class="btn btn--brass" id="trackWa" href="https://wa.me/254720000213" target="_blank" rel="noopener"><span data-i18n="track.sendwa">Send on WhatsApp</span></a>
+      <a class="btn btn--ghost" href="tel:+254720000213" data-i18n="contact.call">Call the office</a>
+    </div>
+  </div>
+</section>
+
+<section class="section section--white">
+  <div class="wrap">
+    <div class="split-head split-head--dark">
+      <div>
+        <p class="eyebrow reveal" data-i18n="track.stages.k">What you'll see</p>
+        <h2 class="reveal" data-i18n="track.stages.h">Six milestones, every shipment.</h2>
+      </div>
+      <p class="lede reveal" data-i18n="track.stages.p">The same checkpoints apply by air or by sea, from collection to signature. Ask for any of them by name and our desk will tell you where your consignment sits.</p>
+    </div>
+    <div class="trio">
+      <div><b>01</b><span data-i18n="track.s1">Received at origin warehouse</span></div>
+      <div><b>02</b><span data-i18n="track.s2">Consolidated &amp; packed</span></div>
+      <div><b>03</b><span data-i18n="track.s3">Departed origin</span></div>
+      <div><b>04</b><span data-i18n="track.s4">Arrived Mombasa / JKIA</span></div>
+      <div><b>05</b><span data-i18n="track.s5">Cleared &amp; released</span></div>
+      <div><b>06</b><span data-i18n="track.s6">Delivered to your door</span></div>
+    </div>
+    <ul class="track-docs">
+      <li data-i18n="track.doc1"><b>Air waybill or bill of lading</b> — issued when your cargo is booked onto a flight or sailing.</li>
+      <li data-i18n="track.doc2"><b>Entry number</b> — issued when we lodge your customs entry at Mombasa or JKIA.</li>
+      <li data-i18n="track.doc3"><b>Delivery note</b> — signed at your door, with photos if you ask for them.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap cta__in">
+    <div>
+      <p class="eyebrow" data-i18n="cta.kicker">Next step</p>
+      <h2 data-i18n="cta.h2">Ready when your supplier is.</h2>
+      <p class="lede" data-i18n="cta.p">Send the details today and we'll have a firm quote back before your stock leaves the factory.</p>
+    </div>
+    <div class="cta__actions">
+      <a class="btn btn--brass" href="https://wa.me/254720000213?text=Hi%20Skyway%2C%20I%27d%20like%20a%20quote" target="_blank" rel="noopener" data-i18n="cta.wa">WhatsApp us</a>
+      <a class="btn btn--onink" href="contact.html" data-i18n="cta.form">Send an enquiry</a>
+    </div>
+  </div>
+</section>

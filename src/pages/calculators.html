@@ -1,0 +1,108 @@
+<section class="page-head">
+  <div class="page-head__media" aria-hidden="true"><img src="assets/img/warehouse.jpg" alt="" /></div>
+  <div class="wrap page-head__in">
+    <div>
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html" data-i18n="nav.home">Home</a><span>/</span><span data-i18n="nav.calc">Calculators</span></nav>
+      <h1><span data-i18n="p.calc.h1">A number before you commit.</span></h1>
+      <p class="lede" data-i18n="p.calc.l">Air, sea, trucking and door-to-door estimates in Kenyan shillings. Indicative figures — we confirm a firm quote in writing.</p>
+      <div class="chip-row"><span class="chip" data-i18n="chips.air">Air</span><span class="chip" data-i18n="chips.sea">Sea</span><span class="chip" data-i18n="chips.truck">Trucking</span><span class="chip" data-i18n="chips.door">Door to door</span></div>
+    </div>
+    <aside class="page-head__aside">
+      <div><b>KSh</b><small data-i18n="calc.currency">quoted in shillings</small></div>
+      <div><b>4</b><small data-i18n="calc.types">calculators</small></div>
+      <div><b>24h</b><small data-i18n="calc.firm">firm quotes</small></div>
+    </aside>
+  </div>
+</section>
+
+<section class="section section--paper2">
+  <div class="wrap">
+    <div class="calc-tabs" role="tablist" aria-label="Calculator">
+      <button class="calc-tab is-on" role="tab" aria-selected="true" data-calc="air" data-i18n="mode.air">Air freight</button>
+      <button class="calc-tab" role="tab" aria-selected="false" data-calc="sea" data-i18n="mode.sea">Sea cargo</button>
+      <button class="calc-tab" role="tab" aria-selected="false" data-calc="truck" data-i18n="calc.truck">Trucking</button>
+      <button class="calc-tab" role="tab" aria-selected="false" data-calc="door" data-i18n="mode.door">Door to door</button>
+    </div>
+
+    <div class="calc-shell">
+      <form class="calc-form" id="calcForm">
+        <div class="field">
+          <label for="calcOrigin" data-i18n="qr.origin">Shipping from</label>
+          <select id="calcOrigin">
+            <option value="china">🇨🇳 China</option>
+            <option value="uk">🇬🇧 United Kingdom</option>
+            <option value="dubai">🇦🇪 Dubai / UAE</option>
+            <option value="turkey">🇹🇷 Turkey</option>
+            <option value="usa">🇺🇸 United States</option>
+          </select>
+        </div>
+        <div class="form-grid">
+          <div class="field">
+            <label for="calcWeight" data-i18n="calc.weight">Chargeable weight (kg)</label>
+            <input id="calcWeight" type="number" min="1" value="100" inputmode="numeric" />
+          </div>
+          <div class="field">
+            <label for="calcVolume" data-i18n="calc.volume">Volume (CBM)</label>
+            <input id="calcVolume" type="number" min="0" step="0.1" value="0.6" inputmode="decimal" />
+          </div>
+        </div>
+        <div class="field" id="calcDestField">
+          <label for="calcDest" data-i18n="calc.dest">Deliver to</label>
+          <select id="calcDest">
+            <option value="nairobi" data-i18n="calc.optNbo">Nairobi</option>
+            <option value="mombasa" data-i18n="calc.optMsa">Mombasa</option>
+            <option value="eldoret" data-i18n="calc.optEld">Eldoret</option>
+            <option value="kisumu" data-i18n="calc.optKis">Kisumu</option>
+            <option value="nakuru" data-i18n="calc.optNak">Nakuru</option>
+          </select>
+        </div>
+        <button class="btn btn--ink btn--block" type="submit"><span data-i18n="calc.run">Calculate estimate</span><svg viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6"/></svg></button>
+        <p class="micro" data-i18n="calc.assume">Estimates assume general cargo, no duties or port charges, and our standard consolidation rate.</p>
+      </form>
+
+      <div class="calc-out" aria-live="polite">
+        <p class="calc-out__label" data-i18n="calc.result">Estimated cost</p>
+        <strong class="calc-out__value" id="calcOut">KSh 0</strong>
+        <p class="calc-out__sub" id="calcMeta">—</p>
+        <hr class="hairline" />
+        <ul class="calc-break" id="calcBreak"></ul>
+        <div class="calc-out__foot">
+          <a class="btn btn--brass btn--block" href="contact.html"><span data-i18n="calc.firmcta">Request this quote in writing</span></a>
+          <a class="textlink" id="calcWa" href="https://wa.me/254720000213" target="_blank" rel="noopener"><span data-i18n="calc.sendwa">Send on WhatsApp</span><svg viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--ink">
+  <div class="wrap">
+    <div class="split-head">
+      <div>
+        <p class="eyebrow reveal" data-i18n="calc.know.k">What moves the price</p>
+        <h2 class="reveal" data-i18n="calc.know.h">Four things decide your number.</h2>
+      </div>
+      <p class="lede reveal" data-i18n="calc.know.p">Know these before you ask for a quote and you'll spot a fair price from a bad one.</p>
+    </div>
+    <div class="card-grid card-grid--dark">
+      <article class="card card--dark reveal"><h3 data-i18n="calc.f1.h">Chargeable weight</h3><p data-i18n="calc.f1.p">Air rates use the greater of actual weight and volumetric weight (length × width × height ÷ 6,000). Light, bulky cargo pays on volume.</p></article>
+      <article class="card card--dark reveal"><h3 data-i18n="calc.f2.h">Mode and lane</h3><p data-i18n="calc.f2.p">Air is faster and dearer per kilo; sea is cheaper per cubic metre but takes weeks. Distance and port congestion do the rest.</p></article>
+      <article class="card card--dark reveal"><h3 data-i18n="calc.f3.h">Duty and VAT</h3><p data-i18n="calc.f3.p">Kenyan duty depends on the tariff code, not the freight rate. We itemise duty and VAT separately and give you the HS code in writing.</p></article>
+      <article class="card card--dark reveal"><h3 data-i18n="calc.f4.h">Delivery and handling</h3><p data-i18n="calc.f4.p">Port charges, transport to your door, and any storage or demurrage. All of it appears on your invoice — nothing added at the end.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap cta__in">
+    <div>
+      <p class="eyebrow" data-i18n="cta.kicker">Next step</p>
+      <h2 data-i18n="cta.h2">Ready when your supplier is.</h2>
+      <p class="lede" data-i18n="cta.p">Send the details today and we'll have a firm quote back before your stock leaves the factory.</p>
+    </div>
+    <div class="cta__actions">
+      <a class="btn btn--brass" href="https://wa.me/254720000213?text=Hi%20Skyway%2C%20I%27d%20like%20a%20quote" target="_blank" rel="noopener" data-i18n="cta.wa">WhatsApp us</a>
+      <a class="btn btn--onink" href="contact.html" data-i18n="cta.form">Send an enquiry</a>
+    </div>
+  </div>
+</section>

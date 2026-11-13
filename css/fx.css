@@ -1,0 +1,288 @@
+/* ============================================================
+   fx.css — hero atmosphere, seamless header, motion layer
+   Loaded last so it can refine the base components.
+   ============================================================ */
+
+/* ── header flows into the hero: transparent over the photo, solid once scrolled ── */
+.header{
+  transition:background .45s var(--ease),border-color .45s var(--ease),
+             backdrop-filter .45s var(--ease),box-shadow .45s var(--ease),color .35s var(--ease);
+}
+.header__over{
+  position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:0;
+  background:linear-gradient(180deg,rgba(6,13,19,.86) 0%,rgba(6,13,19,.52) 46%,rgba(6,13,19,0) 100%);
+  transition:opacity .5s var(--ease);
+}
+body[data-over-hero] .header:not(.is-stuck){
+  background:transparent;border-bottom-color:transparent;backdrop-filter:none;box-shadow:none;
+}
+body[data-over-hero] .header:not(.is-stuck) .header__over{opacity:1}
+/* the utility bar stays ink; the header dissolves into the photo below it */
+
+/* logo swaps: ink logo on paper, light logo over the photo */
+.brand{position:relative}
+.brand__logo--over{
+  position:absolute;inset-block-start:0;inset-inline-start:0;opacity:0;
+  transform:translateY(4px) scale(.98);pointer-events:none;
+  transition:opacity .35s var(--ease),transform .4s var(--ease),height .3s var(--ease);
+}
+body[data-over-hero] .header:not(.is-stuck) .brand__logo--ink{opacity:0;transform:scale(.98)}
+body[data-over-hero] .header:not(.is-stuck) .brand__logo--over{opacity:1;transform:none}
+.brand__logo--ink{transition:opacity .35s var(--ease),transform .4s var(--ease),height .3s var(--ease)}
+
+/* nav + controls read on dark */
+body[data-over-hero] .header:not(.is-stuck) .nav__link{color:rgba(255,255,255,.8)}
+body[data-over-hero] .header:not(.is-stuck) .nav__link:hover,
+body[data-over-hero] .header:not(.is-stuck) .nav__link[aria-current="page"]{color:#fff}
+body[data-over-hero] .header:not(.is-stuck) .nav__link::after{background:var(--brass-lt)}
+body[data-over-hero] .header:not(.is-stuck) .lang{border-color:rgba(255,255,255,.24)}
+body[data-over-hero] .header:not(.is-stuck) .lang svg{stroke:rgba(255,255,255,.7)}
+body[data-over-hero] .header:not(.is-stuck) .lang select{color:#fff}
+body[data-over-hero] .header:not(.is-stuck) .lang select{
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='5'%3E%3Cpath d='M1 1l3 3 3-3' fill='none' stroke='%23e3c395' stroke-width='1.2'/%3E%3C/svg%3E");
+}
+body[data-over-hero] .header:not(.is-stuck) .lang select option{color:var(--ink)}
+body[data-over-hero] .header:not(.is-stuck) .btn--ink{background:transparent;border:1px solid rgba(255,255,255,.34);color:#fff}
+body[data-over-hero] .header:not(.is-stuck) .btn--ink:hover{background:#fff;border-color:#fff;color:var(--ink)}
+body[data-over-hero] .header:not(.is-stuck) .menu-btn{border-color:rgba(255,255,255,.26)}
+body[data-over-hero] .header:not(.is-stuck) .menu-btn i{background:#fff}
+
+/* the hero tucks under the sticky header so there is no hard seam */
+.page-index .hero{
+  margin-top:calc(var(--head-h,0px) * -1);
+  padding-top:var(--head-h,0px);
+}
+/* inner pages: the dark page-head runs under the nav for the same seamless join */
+body:not(.page-index) .page-head{
+  margin-top:calc(var(--head-h,0px) * -1);
+  padding-top:calc(var(--head-h,0px) + clamp(28px,4vw,44px));
+}
+/* while the header floats over the photo, its links sit on transparent glass */
+
+/* ── hero atmosphere ── */
+.hero__media img{
+  filter:saturate(.46) contrast(1.1) brightness(.86);
+  animation:heroDrift 34s cubic-bezier(.2,.6,.3,1) forwards;
+}
+@keyframes heroDrift{
+  0%{transform:scale(1.04) translate3d(0,var(--shift,0),0)}
+  100%{transform:scale(1.13) translate3d(-1.2%,calc(var(--shift,0px) - 10px),0)}
+}
+
+/* two slow brass/teal washes that breathe behind the type */
+.hero__glow{position:absolute;z-index:-2;pointer-events:none;border-radius:50%;filter:blur(60px);mix-blend-mode:screen}
+.hero__glow--a{
+  width:min(760px,72vw);aspect-ratio:1;inset-block-start:-16%;inset-inline-end:-6%;
+  background:radial-gradient(circle,rgba(169,123,63,.34) 0%,rgba(169,123,63,.1) 44%,transparent 68%);
+  animation:glowBreathe 17s ease-in-out infinite;
+}
+.hero__glow--b{
+  width:min(600px,66vw);aspect-ratio:1;inset-block-end:-24%;inset-inline-start:-14%;
+  background:radial-gradient(circle,rgba(45,99,115,.3) 0%,rgba(45,99,115,.08) 46%,transparent 70%);
+  animation:glowBreathe 21s ease-in-out 1.6s infinite reverse;
+}
+@keyframes glowBreathe{
+  0%,100%{opacity:.55;transform:translate3d(0,0,0) scale(1)}
+  50%{opacity:.95;transform:translate3d(2%,-2%,0) scale(1.08)}
+}
+
+/* fine film grain keeps the photographic backdrop from banding */
+.hero__grain{
+  position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:.2;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='3'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");
+}
+
+/* a slow brass scan line sweeping the hero edge */
+.hero::after{
+  content:"";position:absolute;inset-block:0;inset-inline-start:-40%;width:40%;z-index:-1;
+  background:linear-gradient(100deg,transparent,rgba(233,207,163,.07) 45%,rgba(233,207,163,.13) 52%,transparent);
+  animation:heroScan 12s cubic-bezier(.3,.6,.3,1) 2.4s infinite;pointer-events:none;
+}
+@keyframes heroScan{0%{transform:translateX(0)}55%,100%{transform:translateX(340%)}}
+
+/* ── route arc: flowing light + travelling marker ── */
+.route-line--flow{
+  stroke:url(#routeFade);stroke-width:2.4;stroke-opacity:.55;fill:none;
+  stroke-dasharray:26 420;stroke-linecap:round;
+  animation:routeFlow 5.6s linear 3.6s infinite;
+}
+@keyframes routeFlow{from{stroke-dashoffset:446}to{stroke-dashoffset:0}}
+.route-jet{
+  fill:#fff;filter:drop-shadow(0 0 7px rgba(233,207,163,.95)) drop-shadow(0 0 16px rgba(199,154,82,.7));
+  offset-path:path("M-20 262C120 214 196 104 322 116s180 96 320 52");
+  offset-rotate:0deg;opacity:0;
+  animation:jetRun 7s cubic-bezier(.42,0,.58,1) 2.6s infinite;
+}
+@keyframes jetRun{
+  0%{offset-distance:0%;opacity:0}
+  6%{opacity:1}
+  62%{opacity:1}
+  70%,100%{offset-distance:100%;opacity:0}
+}
+.route-label{animation:labelIn 1.2s var(--ease) both}
+.route-label:nth-of-type(1){animation-delay:1.5s}
+.route-label:nth-of-type(2){animation-delay:2.1s}
+.route-label:nth-of-type(3){animation-delay:2.7s}
+@keyframes labelIn{from{opacity:0;letter-spacing:.42em}to{opacity:1;letter-spacing:.28em}}
+
+/* ── a soft scrim anchors the copy without showing an edge ── */
+.hero__body{position:relative;isolation:isolate}
+.hero__body::before{
+  content:"";position:absolute;z-index:-1;pointer-events:none;
+  inset:-8% -26% -10% -18%;
+  background:radial-gradient(70% 66% at 36% 46%,rgba(5,11,16,.84) 0%,rgba(5,11,16,.58) 48%,rgba(5,11,16,0) 78%);
+  filter:blur(6px);
+}
+.hero__foot{position:relative}
+.hero__foot::before{
+  content:"";position:absolute;z-index:-1;pointer-events:none;inset:-18% -10% -30% -12%;
+  background:radial-gradient(62% 100% at 22% 50%,rgba(5,11,16,.72),rgba(5,11,16,0) 74%);
+}
+/* the brass headline is italic display type: keep it above 3:1 on the photo */
+.hero__title em{background:linear-gradient(100deg,#fdf8ec 0%,#f7e7c9 46%,#eed6ab 100%);-webkit-background-clip:text;background-clip:text}
+
+/* ── staggered hero entrance ── */
+/* the mask clips its rise; padding+negative margin keeps italic overhang intact */
+.hero__mask{
+  display:block;overflow:hidden;
+  padding-inline:.08em .08em;margin-inline:-.08em;
+  padding-block-end:.14em;margin-block-end:-.14em;
+}
+.hero__mask > *{display:block}
+.hero-stagger{animation:heroRise 1.05s var(--ease) both;animation-delay:calc(var(--d,0) * 130ms)}
+.hero__mask{
+  animation:maskRise 1.15s var(--ease) both;
+  animation-delay:calc(var(--d,0) * 130ms + 80ms);
+}
+@keyframes heroRise{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+@keyframes maskRise{from{opacity:0;transform:translateY(110%)}to{opacity:1;transform:none}}
+
+/* the gradient headline gets a light sweep once it lands */
+.hero__title em{position:relative}
+.hero__title em::after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(100deg,transparent 34%,rgba(255,255,255,.7) 50%,transparent 66%);
+  background-size:260% 100%;background-position:130% 0;
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  animation:titleShine 6.5s ease-in-out 2.2s infinite;
+}
+@keyframes titleShine{0%{background-position:130% 0}38%,100%{background-position:-40% 0}}
+
+/* floating glass cards breathe gently, out of phase */
+.hero__side-card{animation:cardFloat 9s ease-in-out infinite}
+.hero__side-card:nth-child(2){animation-delay:-3s}
+.hero__side-card:nth-child(3){animation-delay:-6s}
+@keyframes cardFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+
+/* soft lift on the quote rail so it reads as a panel over the hero edge */
+.quote-rail{box-shadow:0 -34px 60px -46px rgba(0,0,0,.85)}
+
+/* ── mobile menu: reveals with a soft slide + staggered links ── */
+@media (max-width:900px){
+  .nav{
+    transform:translateY(-8px);
+    transition:max-height .45s var(--ease),opacity .3s var(--ease),
+               visibility .3s,transform .45s var(--ease),box-shadow .3s;
+  }
+  .nav.is-open{transform:none;box-shadow:0 28px 50px -30px rgba(11,22,32,.55)}
+  /* an open sheet needs a light backdrop once the page has scrolled */
+  .header.is-stuck .nav.is-open{background:var(--paper);border-bottom-color:var(--line)}
+  .header.is-stuck .nav.is-open .nav__link{border-bottom-color:var(--line)}
+  .header.is-stuck .nav.is-open .nav__link{color:#3d4a52}
+  .header.is-stuck .nav.is-open .nav__link[aria-current="page"]{color:var(--brass-ink)}
+  .nav__link{
+    opacity:0;transform:translateY(-6px);
+    transition:opacity .35s var(--ease),transform .35s var(--ease),color .2s;
+  }
+  .nav.is-open .nav__link{opacity:1;transform:none}
+  .nav.is-open .nav__link:nth-child(1){transition-delay:.05s}
+  .nav.is-open .nav__link:nth-child(2){transition-delay:.09s}
+  .nav.is-open .nav__link:nth-child(3){transition-delay:.13s}
+  .nav.is-open .nav__link:nth-child(4){transition-delay:.17s}
+  .nav.is-open .nav__link:nth-child(5){transition-delay:.21s}
+  .nav.is-open .nav__link:nth-child(6){transition-delay:.25s}
+  body[data-over-hero] .header:not(.is-stuck) .nav.is-open{background:rgba(9,18,26,.96);border-bottom-color:rgba(255,255,255,.1)}
+  body[data-over-hero] .header:not(.is-stuck) .nav.is-open .nav__link{border-bottom-color:rgba(255,255,255,.09)}
+}
+
+/* ════════ LANDING PAGE MOTION ════════ */
+
+/* partner ribbon scrolls slowly, pausing on hover */
+.ribbon{overflow:hidden}
+.ribbon__in{position:relative}
+.ribbon__track{display:flex;flex:1;min-width:0;overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent)}
+.ribbon__names{
+  display:flex;flex-wrap:nowrap;flex:none;gap:clamp(22px,4vw,52px);
+  padding-inline-end:clamp(22px,4vw,52px);
+  animation:marquee 38s linear infinite;
+  will-change:transform;
+}
+.ribbon:hover .ribbon__names{animation-play-state:paused}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-100%)}}
+html[dir="rtl"] .ribbon__track{mask-image:linear-gradient(-90deg,transparent,#000 4%,#000 96%,transparent)}
+html[dir="rtl"] .ribbon__names{animation-direction:reverse}
+.ribbon__names span{white-space:nowrap}
+
+/* capability rows: number drifts, image parallax on hover */
+.cap{position:relative;overflow:hidden}
+.cap::before{
+  content:"";position:absolute;inset-block:0;inset-inline-start:0;width:2px;
+  background:linear-gradient(180deg,var(--brass),transparent);
+  transform:scaleY(0);transform-origin:top;transition:transform .45s var(--ease);
+}
+.cap:hover::before{transform:scaleY(1)}
+.cap__num{transition:color .3s,transform .4s var(--ease)}
+.cap:hover .cap__num{transform:translateX(4px)}
+.cap__img{position:relative}
+.cap__img::after{
+  content:"";position:absolute;inset:0;background:rgba(11,22,32,.16);
+  transition:opacity .45s var(--ease);
+}
+.cap:hover .cap__img::after{opacity:0}
+
+/* lane rows: a brass rule wipes in from the leading edge */
+.lane-row{position:relative}
+.lane-row::after{
+  content:"";position:absolute;inset-block-end:-1px;inset-inline-start:0;height:1px;width:100%;
+  background:linear-gradient(90deg,var(--brass-lt),transparent);
+  transform:scaleX(0);transform-origin:inline-start;transition:transform .55s var(--ease);
+}
+.lane-row:hover::after{transform:scaleX(1)}
+
+/* finance image: slow ken-burns so the section never feels static */
+.finance__media img{animation:kenBurns 26s ease-in-out infinite alternate}
+@keyframes kenBurns{from{transform:scale(1) translate(0,0)}to{transform:scale(1.07) translate(-1%,-1.5%)}}
+
+/* numbers band: brass glow behind the figures */
+.numbers{position:relative;overflow:hidden}
+.numbers::before{
+  content:"";position:absolute;inset:-40% -10% auto;height:180%;
+  background:radial-gradient(60% 50% at 50% 0%,rgba(169,123,63,.16),transparent 70%);
+  pointer-events:none;
+}
+.numbers__item{transition:background .4s var(--ease)}
+.numbers__item:hover{background:rgba(255,255,255,.03)}
+
+/* news cards lift */
+.news-card{transition:border-color .3s,transform .45s var(--ease)}
+.news-card:hover{transform:translateY(-4px)}
+
+/* reveal: a touch more travel, optional per-element delay */
+.reveal{transform:translateY(28px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.reveal.in{transform:none}
+
+/* section heads get a hairline that draws in when revealed */
+.split-head h2,.intro__title{position:relative}
+
+/* ── reduced motion: keep everything readable, drop the movement ── */
+@media (prefers-reduced-motion:reduce){
+  .hero__media img,.hero__glow,.hero::after,.hero-stagger,.hero__mask,
+  .hero__side-card,.route-line--flow,.route-jet,.route-label,
+  .ribbon__names,.finance__media img,.hero__title em::after{animation:none!important}
+  .route-jet{opacity:0}
+  .hero-stagger,.hero__mask{opacity:1;transform:none}
+  .ribbon__track{overflow:visible;mask-image:none}
+  .ribbon__names{flex-wrap:wrap;animation:none}
+  .ribbon__names[aria-hidden="true"]{display:none}
+  .reveal{opacity:1;transform:none}
+}

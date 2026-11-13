@@ -1,0 +1,130 @@
+<section class="page-head">
+  <div class="page-head__media" aria-hidden="true"><img src="assets/img/nairobi.jpg" alt="" /></div>
+  <div class="wrap page-head__in">
+    <div>
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html" data-i18n="nav.home">Home</a><span>/</span><span data-i18n="nav.contact">Contact</span></nav>
+      <h1><span data-i18n="p.contact.h1">Talk to someone<br /><em>who knows the route.</em></span></h1>
+      <p class="lede" data-i18n="p.contact.l">Call, WhatsApp or send the form. For urgent cargo, always call the office directly.</p>
+    </div>
+    <aside class="page-head__aside">
+      <div><b>Mon–Sat</b><small data-i18n="contact.hours">8:00 – 17:30 EAT</small></div>
+      <div><b>24h</b><small data-i18n="contact.wa">WhatsApp reply</small></div>
+    </aside>
+  </div>
+</section>
+
+<section class="section section--paper2">
+  <div class="wrap contact-grid">
+    <div class="contact-info">
+      <p class="eyebrow reveal" data-i18n="contact.kicker">Nairobi head office</p>
+      <h2 class="reveal" data-i18n="contact.h2">Optimum House, Eastleigh.</h2>
+      <address class="contact-address reveal">
+        2nd Floor, Optimum House, Skyway Centre<br />
+        General Waruingi Street, Eastleigh<br />
+        Opposite Pumwani Maternity Hospital main gate<br />
+        Nairobi, Kenya
+      </address>
+      <ul class="contact-list reveal">
+        <li><span data-i18n="contact.phone">Phone</span><a href="tel:+254720000213">0720 000 213</a></li>
+        <li><span></span><a href="tel:+254791888803">0791 888 803</a></li>
+        <li><span data-i18n="contact.msa">Mombasa</span><a href="tel:+254722212525">+254 722 212 525</a></li>
+        <li><span data-i18n="contact.email">Email</span><a href="mailto:skyway@skyway.co.ke">skyway@skyway.co.ke</a></li>
+        <li><span></span><a href="mailto:skywaycargo22@gmail.com">skywaycargo22@gmail.com</a></li>
+        <li><span>WhatsApp</span><a href="https://wa.me/254720000213" target="_blank" rel="noopener">+254 720 000 213</a></li>
+      </ul>
+      <a class="contact-map reveal" href="https://www.google.com/maps/place/Skyway/@-1.2806569,36.8454528,16z" target="_blank" rel="noopener">
+        <span class="contact-map__pin" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z"/></svg></span>
+        <span><b data-i18n="contact.directions">Open in Google Maps</b><small data-i18n="contact.directions.sub">Waruingi Street · opposite Pumwani main gate</small></span>
+        <svg class="contact-map__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M7 17 17 7M9 7h8v8"/></svg>
+      </a>
+      <div class="contact-actions reveal">
+        <a class="btn btn--brass" href="https://wa.me/254720000213?text=Hi%20Skyway%2C%20I%27d%20like%20a%20quote" target="_blank" rel="noopener" data-i18n="cta.wa">WhatsApp us</a>
+        <a class="btn btn--ghost" href="tel:+254720000213" data-i18n="contact.call">Call the office</a>
+      </div>
+    </div>
+
+    <form class="contact-form reveal" id="contactForm" novalidate>
+      <h2 data-i18n="contact.form.h">Send an enquiry</h2>
+      <p class="micro" data-i18n="contact.form.p">Tell us what you're shipping and where from. We reply within one working day.</p>
+      <div class="form-grid">
+        <div class="field">
+          <label for="cName" data-i18n="form.name">Full name</label>
+          <input id="cName" name="name" type="text" autocomplete="name" required />
+        </div>
+        <div class="field">
+          <label for="cPhone" data-i18n="form.phone">Phone / WhatsApp</label>
+          <input id="cPhone" name="phone" type="tel" autocomplete="tel" required />
+        </div>
+      </div>
+      <div class="field">
+        <label for="cEmail" data-i18n="form.email">Email (optional)</label>
+        <input id="cEmail" name="email" type="email" autocomplete="email" />
+      </div>
+      <div class="form-grid">
+        <div class="field">
+          <label for="cOrigin" data-i18n="qr.origin">Shipping from</label>
+          <select id="cOrigin" name="origin">
+            <option value="china">🇨🇳 China</option>
+            <option value="uk">🇬🇧 United Kingdom</option>
+            <option value="dubai">🇦🇪 Dubai / UAE</option>
+            <option value="turkey">🇹🇷 Turkey</option>
+            <option value="usa">🇺🇸 United States</option>
+            <option value="other" data-i18n="form.other">Other</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="cService" data-i18n="form.service">Service needed</label>
+          <select id="cService" name="service">
+            <option value="air" data-i18n="mode.air">Air freight</option>
+            <option value="sea" data-i18n="mode.sea">Sea cargo</option>
+            <option value="door" data-i18n="mode.door">Door to door</option>
+            <option value="clearing" data-i18n="svc.clear">Clearing &amp; documentation</option>
+            <option value="truck" data-i18n="calc.truck">Trucking</option>
+            <option value="wh" data-i18n="svc.wh">Warehousing</option>
+          </select>
+        </div>
+      </div>
+      <div class="field">
+        <label for="cMsg" data-i18n="form.msg">What are you shipping?</label>
+        <textarea id="cMsg" name="message" rows="4" required></textarea>
+      </div>
+      <button class="btn btn--brass btn--block" type="submit"><span data-i18n="form.sendwa">Send it on WhatsApp</span><svg viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6"/></svg></button>
+      <p class="form-msg" id="formMsg" role="status" aria-live="polite"></p>
+      <a class="btn btn--ghost btn--sm contact-form__wa" id="formMail" href="mailto:skyway@skyway.co.ke" data-i18n="form.sendmail">Prefer email? Write to us instead</a>
+      <p class="micro" data-i18n="form.privacy">We use your details only to answer this enquiry.</p>
+    </form>
+  </div>
+</section>
+
+<section class="section section--white">
+  <div class="wrap">
+    <div class="split-head split-head--dark">
+      <div>
+        <p class="eyebrow reveal" data-i18n="faq.k">Questions</p>
+        <h2 class="reveal" data-i18n="faq.h">Asked before every first shipment.</h2>
+      </div>
+    </div>
+    <div class="faq">
+      <details class="reveal"><summary data-i18n="faq.q1">How do I start a shipment?</summary><p data-i18n="faq.a1">Send the supplier details, cargo description, weight or volume, and destination. We reply with a quote and the documents we need. If you already have goods with a supplier, ask them to hold until we confirm collection.</p></details>
+      <details class="reveal"><summary data-i18n="faq.q2">Do you collect from the supplier?</summary><p data-i18n="faq.a2">Yes, in Guangzhou, Foshan, London, Manchester, Istanbul, Bursa, Dubai and across New Jersey and Houston. Collection outside those areas is arranged case by case.</p></details>
+      <details class="reveal"><summary data-i18n="faq.q3">What documents do I need?</summary><p data-i18n="faq.a3">A commercial invoice and packing list, your KRA PIN, and an IDF. For restricted goods we may ask for permits or certificates. We prepare the entry and tell you exactly what's missing.</p></details>
+      <details class="reveal"><summary data-i18n="faq.q4">Is duty included in your quote?</summary><p data-i18n="faq.a4">Freight is quoted separately from duty, VAT and port charges so you can see what the government takes and what we charge. We can pay duty on your behalf where agreed.</p></details>
+      <details class="reveal"><summary data-i18n="faq.q5">Can I pay in instalments?</summary><p data-i18n="faq.a5">On approved accounts, yes. We settle your supplier or freight invoice at origin and you clear the balance as your stock sells. Terms depend on the cargo and your trading history.</p></details>
+      <details class="reveal"><summary data-i18n="faq.q6">Do you deliver upcountry?</summary><p data-i18n="faq.a6">Yes — Eldoret, Kisumu, Nakuru, Machakos, Meru and beyond, using our own fleet or vetted partners. Ask for the destination rate when you request a quote.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap cta__in">
+    <div>
+      <p class="eyebrow" data-i18n="cta.kicker">Next step</p>
+      <h2 data-i18n="cta.h2">Ready when your supplier is.</h2>
+      <p class="lede" data-i18n="cta.p">Send the details today and we'll have a firm quote back before your stock leaves the factory.</p>
+    </div>
+    <div class="cta__actions">
+      <a class="btn btn--brass" href="https://wa.me/254720000213?text=Hi%20Skyway%2C%20I%27d%20like%20a%20quote" target="_blank" rel="noopener" data-i18n="cta.wa">WhatsApp us</a>
+      <a class="btn btn--onink" href="mailto:skyway@skyway.co.ke" data-i18n="contact.emailus">Email us</a>
+    </div>
+  </div>
+</section>

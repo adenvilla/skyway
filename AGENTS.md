@@ -24,6 +24,11 @@ freecode reads this file before every change. Add anything it should always reme
 - **Real contact data** (do not invent): HQ 2nd Floor, Optimum House, Skyway Centre, General Waruingi St,
   Eastleigh, opposite Pumwani Maternity Hospital main gate. Phones 0720 000 213 / 0791 888 803. Emails
   skyway@skyway.co.ke, skywaycargo22@gmail.com. Hours Mon–Sat 8:00–17:30.
+- **Google Maps link**: always `https://www.google.com/maps?cid=1238767175573254461` — the canonical
+  CID for the verified "Skyway, General Waruingi st Pumwani maternity hospital Optimum house" listing
+  (`0x182f11c1d08e26df:0x1130fc2ed375313d`, -1.2806569, 36.8454528). Do **not** use
+  `maps/place/Skyway/@lat,lng` (a bare text search that opens no listing) or `search/?api=1&query=...`
+  (a plain name query resolves to a different business, "Transitaire Skyway Intl").
 - **Removed on purpose**: `loyalty.skyway.co.ke` (DNS fails), the demo shipment tracker, the `?origin=mombasa`
   calculator option, and fabricated numbers `757006002`, `727000037`, `971503216581`.
 - Freight rates in `js/data.js` and every transit time are **indicative placeholders**, not a rate card.

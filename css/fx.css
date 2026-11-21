@@ -620,3 +620,92 @@ html[dir="rtl"] .hero__board-row i{
   .chip{transition:border-color .25s var(--ease),color .25s var(--ease),background .25s var(--ease)}
   .chip:hover{border-color:rgba(199,154,82,.55);color:#fff;background:rgba(199,154,82,.1)}
 }
+
+/* ════════ 10/10 TYPOGRAPHY, SURFACE CRAFT, A11Y & MULTILINGUAL POLISH ════════ */
+
+/* subtle brass scroll-progress hairline at the top of the viewport */
+body::before{
+  content:"";position:fixed;inset-block-start:0;inset-inline-start:0;right:0;height:2px;z-index:1200;
+  background:linear-gradient(90deg,var(--brass),var(--brass-lt),#f1d9ae);
+  transform:scaleX(var(--scroll-p,0));transform-origin:inline-start;
+  pointer-events:none;transition:transform .08s linear;
+}
+@media (prefers-reduced-motion:reduce){body::before{display:none}}
+
+/* editorial typography: optical kerning, balanced headings, tabular figures */
+body{
+  font-feature-settings:"kern" 1,"liga" 1;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  text-rendering:optimizeLegibility;
+}
+h1,h2,h3,.hero__title,.page-head h1,.intro__title{text-wrap:balance}
+p,.lede{text-wrap:pretty}
+.hero__marks span,.numbers__item strong,.page-head__aside b,
+.qr__total strong,.hero__board-row small,.calc-res__val,.calc-res strong{
+  font-variant-numeric:tabular-nums;
+}
+
+/* warm brand selection */
+::selection{background:rgba(199,154,82,.28);color:var(--ink)}
+
+/* crisp accessible focus rings everywhere */
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{
+  outline:2px solid var(--brass-lt);outline-offset:2px;
+}
+.skip-link:focus{
+  background:var(--ink);color:#fff;border:1px solid var(--brass-lt);
+  box-shadow:0 12px 30px rgba(0,0,0,.45);
+}
+
+/* testimonial & finance editorial polish */
+.testimonial blockquote{
+  position:relative;
+  border-inline-start:2px solid rgba(169,123,63,.55);
+  padding-inline-start:clamp(20px,3vw,34px);
+}
+.finance__media{overflow:hidden;border-radius:3px;box-shadow:0 26px 56px -34px rgba(11,22,32,.42)}
+
+/* CTA band & footer finishing */
+.cta{position:relative;overflow:hidden}
+.cta::before{
+  content:"";position:absolute;inset:-30% 10% auto;height:160%;
+  background:radial-gradient(55% 55% at 50% 20%,rgba(199,154,82,.16),transparent 70%);
+  pointer-events:none;
+}
+.footer{border-top:1px solid rgba(199,154,82,.28)}
+.footer__col a{
+  position:relative;transition:color .22s var(--ease),padding-inline-start .22s var(--ease);
+}
+.footer__col a:hover{color:var(--brass-lt)}
+
+/* mobile dock: native frosted glass & iPhone/Android safe-area support */
+@media (max-width:1080px){
+  .rail{
+    padding-bottom:max(8px,env(safe-area-inset-bottom));
+    backdrop-filter:blur(14px) saturate(140%);
+  }
+}
+
+/* multilingual typography refinements: CJK & Arabic RTL */
+html[lang="zh"] .eyebrow,
+html[lang="zh"] .hero__board-k,
+html[lang="zh"] .hero__board-live,
+html[lang="zh"] .hero__marks small,
+html[lang="zh"] .page-head__aside small,
+html[lang="zh"] .numbers__item span,
+html[lang="zh"] .crumbs,
+html[lang="zh"] .chip{
+  letter-spacing:.04em;
+}
+html[dir="rtl"] body{line-height:1.68}
+html[dir="rtl"] .eyebrow,
+html[dir="rtl"] .hero__board-k,
+html[dir="rtl"] .hero__board-live,
+html[dir="rtl"] .hero__marks small,
+html[dir="rtl"] .page-head__aside small,
+html[dir="rtl"] .numbers__item span,
+html[dir="rtl"] .crumbs,
+html[dir="rtl"] .chip{
+  letter-spacing:0;
+}

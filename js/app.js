@@ -443,6 +443,21 @@
     compose();
   }
 
+  /* ───────── subtle brass scroll-progress hairline ───────── */
+  if (!matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    let ticking = false;
+    const updateProgress = () => {
+      const h = document.documentElement.scrollHeight - innerHeight;
+      const pct = h > 0 ? Math.min(1, Math.max(0, scrollY / h)) : 0;
+      document.documentElement.style.setProperty("--scroll-p", pct.toFixed(4));
+      ticking = false;
+    };
+    addEventListener("scroll", () => {
+      if (!ticking) { ticking = true; requestAnimationFrame(updateProgress); }
+    }, { passive: true });
+    updateProgress();
+  }
+
   const year = $("#year");
   if (year) year.textContent = new Date().getFullYear();
 })();

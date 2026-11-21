@@ -77,7 +77,7 @@
     "about.v3.h":"We don't sell you air for sea cargo","about.v3.p":"If sea will do, we say so — even though air pays us more per kilo. The right mode for your goods is the one we quote.",
     "about.press.p":"Coverage of our buy-now-pay-later model and the digitisation of Kenya's freight sector.",
 
-    "p.contact.h1":"Talk to someone who knows the route.","contact.hours":"08:00 – 18:00 EAT","contact.wa":"WhatsApp reply",
+    "p.contact.h1":"Talk to someone who knows the route.","contact.hours":"08:00 – 17:30 EAT","contact.wa":"WhatsApp reply",
     "contact.kicker":"Nairobi head office","contact.h2":"Skyway Center, Eastleigh.","contact.phone":"Phone","contact.msa":"Mombasa",
     "contact.email":"Email","contact.call":"Call the office","contact.emailus":"Email us",
     "contact.loyaltynote":"Existing customer? Manage points and rewards at loyalty.skyway.co.ke.",
@@ -167,7 +167,7 @@
     "about.v3.h":"我们不把海运货卖成空运","about.v3.p":"如果海运更合适，我们会直说——尽管空运每公斤赚得更多。适合您货物的方式，才是我们报的方式。",
     "about.press.p":"关于我们先买后付模式与肯尼亚货运数字化的媒体报道。",
 
-    "p.contact.h1":"与真正熟悉这条航线的人交谈。","contact.hours":"08:00 – 18:00（东非时间）","contact.wa":"WhatsApp 回复",
+    "p.contact.h1":"与真正熟悉这条航线的人交谈。","contact.hours":"08:00 – 17:30（东非时间）","contact.wa":"WhatsApp 回复",
     "contact.kicker":"内罗毕总部","contact.h2":"Eastleigh 的 Skyway Center。","contact.phone":"电话","contact.msa":"蒙巴萨",
     "contact.email":"邮箱","contact.call":"致电办公室","contact.emailus":"发邮件给我们",
     "contact.loyaltynote":"老客户？可在 loyalty.skyway.co.ke 管理积分与奖励。",

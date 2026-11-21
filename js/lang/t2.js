@@ -69,7 +69,7 @@
     "about.v2.h":"Limanda kaybolmayız","about.v2.p":"Gümrükleme kendi yetkili müşavirlerimizce yapılır. İş zorlaştığında dosyanızı üçüncü tarafa devretmeyiz.",
     "about.v3.h":"Deniz yükünü hava diye satmayız","about.v3.p":"Deniz yeterliyse söyleriz — hava bize kilo başına daha çok kazandırsa da. Malınıza uygun mod, teklif ettiğimiz moddur.",
     "about.press.p":"Şimdi al sonra öde modelimiz ve Kenya navlun sektörünün dijitalleşmesi üzerine haberler.",
-    "p.contact.h1":"Rotayı bilen biriyle konuşun.","contact.hours":"08:00 – 18:00 EAT","contact.wa":"WhatsApp yanıtı",
+    "p.contact.h1":"Rotayı bilen biriyle konuşun.","contact.hours":"08:00 – 17:30 EAT","contact.wa":"WhatsApp yanıtı",
     "contact.kicker":"Nairobi merkez ofis","contact.h2":"Skyway Center, Eastleigh.","contact.phone":"Telefon","contact.msa":"Mombasa",
     "contact.email":"E-posta","contact.call":"Ofisi ara","contact.emailus":"E-posta gönder",
     "contact.loyaltynote":"Mevcut müşteri misiniz? Puan ve ödülleri loyalty.skyway.co.ke adresinden yönetin.",

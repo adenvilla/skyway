@@ -69,7 +69,7 @@
     "about.v2.h":"Dekedda kama maqnaanno","about.v2.p":"Dhoofinta waxaa gudaha ku qabta wakiilladayada shatiga leh. Faylkaaga lama dhiibo dhinac saddexaad marka ay adkaato.",
     "about.v3.h":"Badda kuguma iibinno hawada","about.v3.p":"Haddii badda ku filan tahay waannu sheegnaa — inkasta oo hawadu kiilo badan nagu siiso. Habka ku habboon alaabtaada ayaa la sheegaa.",
     "about.press.p":"Warbixin ku saabsan qaabkayaga bixin qaybo iyo dijitaalaynta xamuulka Kenya.",
-    "p.contact.h1":"La hadal qof yaqaan waddada.","contact.hours":"08:00 – 18:00 EAT","contact.wa":"Jawaab WhatsApp",
+    "p.contact.h1":"La hadal qof yaqaan waddada.","contact.hours":"08:00 – 17:30 EAT","contact.wa":"Jawaab WhatsApp",
     "contact.kicker":"Xafiiska weyn ee Nairobi","contact.h2":"Skyway Center, Eastleigh.","contact.phone":"Telefoon","contact.msa":"Mombasa",
     "contact.email":"Iimayl","contact.call":"Wac xafiiska","contact.emailus":"Noo dir iimayl",
     "contact.loyaltynote":"Macmiil hore? Maamul dhibcaha loyalty.skyway.co.ke.",

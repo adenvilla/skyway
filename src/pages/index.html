@@ -33,10 +33,6 @@
   </svg>
 
   <div class="hero__in wrap">
-    <div class="hero__rail" aria-hidden="true">
-      <span>01° 17′ S</span><i></i><span>36° 49′ E</span>
-    </div>
-
     <div class="hero__body">
       <p class="hero__eyebrow hero-stagger" style="--d:0">
         <span class="hero__rule" aria-hidden="true"></span>
@@ -54,19 +50,20 @@
       </div>
     </div>
 
-    <div class="hero__side hero-stagger" style="--d:3">
-      <img class="hero__brand" src="assets/img/logo-brass.png" alt="" width="104" height="47" aria-hidden="true" />
-      <div class="hero__side-card" aria-hidden="true">
-        <span class="hero__side-k">Next departure</span>
-        <strong>CAN → NBO</strong>
-        <span class="hero__side-v">Air · 4–7 days</span>
+    <aside class="hero__side hero-stagger" style="--d:3" aria-hidden="true">
+      <div class="hero__board">
+        <span class="hero__board-k" data-i18n="hero.board.k">Next departures</span>
+        <div class="hero__board-row">
+          <b>CAN</b><i></i><b>NBO</b><small>4–7 <span data-i18n="hero.board.d">days</span></small>
+        </div>
+        <div class="hero__board-row">
+          <b>DXB</b><i></i><b>MBA</b><small>18–26 <span data-i18n="hero.board.d">days</span></small>
+        </div>
+        <div class="hero__board-foot">
+          <span class="hero__board-live"><span class="hero__board-dot"></span><span data-i18n="hero.board.live">Scheduled weekly</span></span>
+        </div>
       </div>
-      <div class="hero__side-card" aria-hidden="true">
-        <span class="hero__side-k">Next sailing</span>
-        <strong>DXB → MBA</strong>
-        <span class="hero__side-v">Sea · 18–26 days</span>
-      </div>
-    </div>
+    </aside>
 
     <div class="hero__foot hero-stagger" style="--d:5">
       <div class="hero__marks">

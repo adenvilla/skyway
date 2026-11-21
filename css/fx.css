@@ -514,3 +514,109 @@ html[dir="rtl"] .hero__board-row i{
 .lane-row:focus-visible,.cap__img:focus-visible,.contact-map:focus-visible,.net-card a:focus-visible{
   outline:2px solid var(--brass-lt);outline-offset:3px;
 }
+
+/* ════════ DESKTOP / PC POLISH (min-width: 1081px) ════════ */
+@media (min-width:1081px){
+  /* crisp glass sticky header & animated nav underlines */
+  .header.is-stuck{
+    backdrop-filter:blur(14px) saturate(135%);
+    box-shadow:0 10px 30px -22px rgba(11,22,32,.35);
+  }
+  .nav__link{position:relative}
+  .nav__link::after{
+    content:"";position:absolute;inset-inline:0;bottom:-4px;height:1.5px;
+    background:var(--brass-lt);transform:scaleX(0);transform-origin:inline-start;
+    transition:transform .32s var(--ease);
+  }
+  .nav__link:hover::after,.nav__link[aria-current="page"]::after{transform:scaleX(1)}
+
+  /* hero: richer typography & departure board depth */
+  .hero__title{letter-spacing:-.035em}
+  .hero__cta .btn--brass{
+    box-shadow:0 12px 28px -12px rgba(150,104,47,.65);
+    transition:transform .28s var(--ease),box-shadow .28s var(--ease),background .25s;
+  }
+  .hero__cta .btn--brass:hover{
+    transform:translateY(-2px);
+    box-shadow:0 16px 32px -10px rgba(150,104,47,.8);
+  }
+  .hero__cta .btn--ghost:hover{
+    transform:translateY(-2px);
+    background:rgba(255,255,255,.1);
+  }
+  .hero__board{
+    background:linear-gradient(180deg,rgba(8,17,25,.84),rgba(8,17,25,.68));
+    border:1px solid rgba(255,255,255,.16);
+    border-top:1.5px solid rgba(199,154,82,.65);
+    box-shadow:0 34px 70px -36px rgba(0,0,0,.95),inset 0 1px 0 rgba(255,255,255,.08);
+    transition:transform .4s var(--ease),border-color .35s var(--ease),box-shadow .4s var(--ease);
+  }
+  .hero__board:hover{
+    transform:translateY(-3px);
+    border-color:rgba(199,154,82,.42);
+    box-shadow:0 40px 80px -34px rgba(0,0,0,.98),inset 0 1px 0 rgba(255,255,255,.12);
+  }
+
+  /* quote rail: architectural dock with crisp field hover */
+  .quote-rail__form{
+    border-top:1px solid rgba(199,154,82,.38);
+    box-shadow:0 24px 54px -32px rgba(6,13,19,.75);
+  }
+  .qr__field{transition:background .25s var(--ease)}
+  .qr__field:hover,.qr__field:focus-within{background:rgba(255,255,255,.045)}
+  .qr__submit{transition:background .25s var(--ease),filter .25s var(--ease)}
+  .qr__submit:hover{filter:brightness(1.08)}
+
+  /* capability rows: tactile warm wash + smooth image zoom */
+  .cap{
+    padding-inline:18px;margin-inline:-18px;border-radius:3px;
+    transition:background .32s var(--ease);
+  }
+  .cap:hover{background:rgba(169,123,63,.045)}
+  .cap__img{overflow:hidden;border-radius:2px}
+  .cap__img img{transition:transform .65s var(--ease)}
+  .cap:hover .cap__img img{transform:scale(1.05)}
+
+  /* trade lane rows: subtle highlight + gentle forward nudge */
+  .lane-row{
+    padding-inline:18px;margin-inline:-18px;border-radius:3px;
+    transition:background .3s var(--ease),padding-inline-start .32s var(--ease);
+  }
+  .lane-row:hover{background:rgba(255,255,255,.035);padding-inline-start:24px}
+
+  /* editorial cards, news, network & detail imagery */
+  .news-card{
+    padding:24px 22px 22px;border-radius:3px;
+    transition:border-color .3s var(--ease),transform .38s var(--ease),background .3s var(--ease),box-shadow .38s var(--ease);
+  }
+  .news-card:hover{
+    background:rgba(255,255,255,.72);
+    box-shadow:0 18px 38px -28px rgba(11,22,32,.35);
+  }
+  .net-card,.card{
+    transition:transform .35s var(--ease),border-color .3s var(--ease),box-shadow .35s var(--ease);
+  }
+  .net-card:hover,.card:hover{
+    transform:translateY(-3px);
+    border-color:rgba(169,123,63,.45);
+    box-shadow:0 20px 42px -30px rgba(11,22,32,.32);
+  }
+  .lane-detail__media,.svc-block__media{overflow:hidden;border-radius:3px}
+  .lane-detail__media img,.svc-block__media img{
+    transition:transform .7s var(--ease),filter .45s var(--ease);
+    box-shadow:0 22px 48px -32px rgba(11,22,32,.45);
+  }
+  .lane-detail:hover .lane-detail__media img,
+  .svc-block:hover .svc-block__media img{
+    transform:scale(1.03);filter:saturate(.95);
+  }
+
+  /* inner page heads: subtle brass atmosphere & interactive chips */
+  .page-head::before{
+    content:"";position:absolute;inset:-20% -10% auto auto;width:55%;height:140%;
+    background:radial-gradient(60% 60% at 75% 25%,rgba(199,154,82,.14),transparent 70%);
+    pointer-events:none;z-index:0;
+  }
+  .chip{transition:border-color .25s var(--ease),color .25s var(--ease),background .25s var(--ease)}
+  .chip:hover{border-color:rgba(199,154,82,.55);color:#fff;background:rgba(199,154,82,.1)}
+}
